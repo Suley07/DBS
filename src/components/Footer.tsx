@@ -39,9 +39,10 @@ const Footer = () => (
           <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">Bedrijfsgegevens</h4>
           <div className="text-sm text-muted-foreground space-y-2">
             <p>Dienst Bewaking en Surveillance B.V.</p>
-            <p>KVK: 12345678</p>
-            <p>info@dbssecurity.nl</p>
-            <p>+31 (0)20 123 4567</p>
+            <p>KVK: 93896034</p>
+            <p>Einsteinlaan 28, 2289CC Rijswijk</p>
+            <p>info@dienstbewakingensurveillance.nl</p>
+            <p>06 11 74 64 64</p>
           </div>
         </div>
       </div>

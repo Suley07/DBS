@@ -21,13 +21,36 @@ const values = [
   },
 ];
 
+const partners = [
+  "Schiphol Group", "HEINEKEN", "RAI Amsterdam", "Gemeente Den Haag",
+  "ProRail", "NS", "AFAS", "Ziggo Dome", "Johan Cruijff ArenA", "Jaarbeurs",
+  "Shell", "KPN",
+];
+
+const MarqueeRow = ({ reverse = false }: { reverse?: boolean }) => (
+  <div className="flex overflow-hidden">
+    <div className={`flex gap-12 items-center ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
+      {[...partners, ...partners].map((name, i) => (
+        <div
+          key={`${name}-${i}`}
+          className="flex-shrink-0 px-8 py-4 border border-border/50 rounded-lg bg-card/50 backdrop-blur-sm"
+        >
+          <span className="text-sm font-semibold text-muted-foreground tracking-wider uppercase whitespace-nowrap">
+            {name}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const Home = () => (
   <main>
     {/* Hero */}
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroImage} alt="Professionele beveiliging" className="w-full h-full object-cover" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-background/75" />
+        <div className="absolute inset-0 bg-background/55" />
       </div>
 
       <div className="container relative z-10 pt-20">
@@ -41,7 +64,7 @@ const Home = () => (
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-foreground mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-foreground mb-6 drop-shadow-lg"
           >
             Premium Beveiliging
             <br />
@@ -54,7 +77,7 @@ const Home = () => (
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed"
+            className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed drop-shadow-md"
           >
             Landelijk inzetbare beveiligingsspecialisten. Van objectbeveiliging tot
             evenementenbeveiliging — wij leveren discretie, betrouwbaarheid en professionaliteit.
@@ -104,6 +127,24 @@ const Home = () => (
             </motion.div>
           ))}
         </div>
+      </div>
+    </section>
+
+    {/* Partners Marquee */}
+    <section className="py-16 md:py-20 border-y border-border/30 bg-background overflow-hidden">
+      <div className="container mb-8">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-sm font-medium text-muted-foreground uppercase tracking-widest text-center"
+        >
+          Vertrouwd door toonaangevende organisaties
+        </motion.p>
+      </div>
+      <div className="space-y-6">
+        <MarqueeRow />
+        <MarqueeRow reverse />
       </div>
     </section>
   </main>
