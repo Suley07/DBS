@@ -82,7 +82,7 @@ const Diensten = () => (
                   {service.description}
                 </p>
                 <Link
-                  to="/contact"
+                  to={`/diensten/${["objectbeveiliging", "evenementenbeveiliging", "bouwbeveiliging", "hospitality"][i]}`}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground group-hover:text-primary transition-colors uppercase tracking-wide"
                 >
                   Meer Informatie
