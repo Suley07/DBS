@@ -18,7 +18,6 @@ const Contact = () => {
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -35,9 +34,9 @@ const Contact = () => {
 
               <div className="space-y-8">
                 {[
-                  { icon: Phone, label: "Telefoon", value: "+31 (0)20 123 4567" },
-                  { icon: Mail, label: "Email", value: "info@dbssecurity.nl" },
-                  { icon: MapPin, label: "Adres", value: "Amsterdam, Nederland" },
+                  { icon: Phone, label: "Telefoon", value: "06 11 74 64 64" },
+                  { icon: Mail, label: "Email", value: "info@dienstbewakingensurveillance.nl" },
+                  { icon: MapPin, label: "Adres", value: "Einsteinlaan 28, 2289CC Rijswijk" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -52,7 +51,6 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Form */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
