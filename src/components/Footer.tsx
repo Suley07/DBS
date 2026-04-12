@@ -1,17 +1,56 @@
-import { Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="border-t border-border py-10 bg-gradient-navy">
-    <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-      <div className="flex items-center gap-2">
-        <Shield className="w-5 h-5 text-primary" />
-        <span className="font-heading text-lg tracking-wider text-foreground">
-          GUARD<span className="text-primary">FORCE</span>
-        </span>
+  <footer className="bg-card border-t border-border">
+    <div className="container py-16">
+      <div className="grid md:grid-cols-3 gap-12">
+        <div>
+          <h3 className="text-lg font-bold text-foreground mb-4">
+            <span className="text-primary">DBS</span> Security
+          </h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Dienst Bewaking en Surveillance B.V.
+            <br />
+            Professionele beveiligingsdiensten door heel Nederland.
+          </p>
+        </div>
+
+        <div>
+          <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">Snelle Links</h4>
+          <div className="flex flex-col gap-2">
+            {[
+              { label: "Home", path: "/" },
+              { label: "Diensten", path: "/diensten" },
+              { label: "Over Ons", path: "/over-ons" },
+              { label: "Contact", path: "/contact" },
+            ].map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">Bedrijfsgegevens</h4>
+          <div className="text-sm text-muted-foreground space-y-2">
+            <p>Dienst Bewaking en Surveillance B.V.</p>
+            <p>KVK: 12345678</p>
+            <p>info@dbssecurity.nl</p>
+            <p>+31 (0)20 123 4567</p>
+          </div>
+        </div>
       </div>
-      <p className="text-muted-foreground text-sm">
-        © {new Date().getFullYear()} GuardForce Security. Alle rechten voorbehouden.
-      </p>
+
+      <div className="border-t border-border mt-12 pt-8 text-center">
+        <p className="text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Dienst Bewaking en Surveillance B.V. Alle rechten voorbehouden.
+        </p>
+      </div>
     </div>
   </footer>
 );

@@ -1,44 +1,50 @@
 import { useState } from "react";
-import { Shield, Menu, X, Phone } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo-dbs.png";
 
-const navItems = ["Diensten", "Over Ons", "Waarom Wij", "Contact"];
+const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "Diensten", path: "/diensten" },
+  { label: "Over Ons", path: "/over-ons" },
+  { label: "Contact", path: "/contact" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
-  const scrollTo = (id: string) => {
-    document.getElementById(id.toLowerCase().replace(" ", "-"))?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false);
-  };
+  const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="container flex items-center justify-between h-16 md:h-20">
-        <div className="flex items-center gap-2">
-          <Shield className="w-8 h-8 text-primary" />
-          <span className="font-heading text-xl md:text-2xl font-bold tracking-wider text-foreground">
-            GUARD<span className="text-primary">FORCE</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+      <div className="container flex items-center justify-between h-20">
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="DBS Logo" className="w-12 h-12 object-contain" />
+          <span className="text-lg font-extrabold tracking-tight text-foreground hidden sm:block">
+            <span className="text-primary">DBS</span> Security
           </span>
-        </div>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <button
-              key={item}
-              onClick={() => scrollTo(item)}
-              className="font-heading text-sm tracking-widest text-muted-foreground hover:text-primary transition-colors uppercase"
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`text-sm font-medium tracking-wide transition-colors ${
+                location.pathname === link.path
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
-              {item}
-            </button>
+              {link.label}
+            </Link>
           ))}
-          <a
-            href="tel:+31201234567"
-            className="flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded font-heading text-sm tracking-wider hover:opacity-90 transition-opacity"
+          <Link
+            to="/contact"
+            className="btn-gradient-red text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold tracking-wide transition-all hover:shadow-lg hover:shadow-primary/20"
           >
-            <Phone className="w-4 h-4" />
-            Bel Direct
-          </a>
+            Offerte Aanvragen
+          </Link>
         </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden text-foreground">
@@ -52,18 +58,30 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
           >
-            <div className="container py-4 flex flex-col gap-4">
-              {navItems.map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollTo(item)}
-                  className="font-heading text-left text-sm tracking-widest text-muted-foreground hover:text-primary transition-colors uppercase"
+            <div className="container py-6 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setOpen(false)}
+                  className={`text-sm font-medium py-2 transition-colors ${
+                    location.pathname === link.path
+                      ? "text-primary"
+                      : "text-muted-foreground"
+                  }`}
                 >
-                  {item}
-                </button>
+                  {link.label}
+                </Link>
               ))}
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className="btn-gradient-red text-primary-foreground px-6 py-3 rounded-lg text-sm font-semibold text-center mt-2"
+              >
+                Offerte Aanvragen
+              </Link>
             </div>
           </motion.div>
         )}
