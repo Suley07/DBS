@@ -107,8 +107,8 @@
 
   /* Subtle pulse for floating CTA */
   @keyframes pulse-soft {
-    0%, 100% { box-shadow: 0 0 0 0 hsl(0, 56%, 35% / 0.55); }
-    50% { box-shadow: 0 0 0 14px hsl(0, 56%, 35% / 0); }
+    0%, 100% { box-shadow: 0 0 0 0 hsl(0, 56%, 35% / 0.4); }
+    50% { box-shadow: 0 0 0 10px hsl(0, 56%, 35% / 0); }
   }
   .animate-pulse-soft { animation: pulse-soft 2.4s ease-out infinite; }
 }
