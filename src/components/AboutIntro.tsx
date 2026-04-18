@@ -60,8 +60,20 @@ const AboutIntro = () => (
               height={1440}
             />
           </div>
-          <div className="absolute -bottom-4 -left-4 w-24 h-24 border-l-2 border-b-2 border-primary/40 rounded-bl-2xl" />
-          <div className="absolute -top-4 -right-4 w-24 h-24 border-r-2 border-t-2 border-primary/40 rounded-tr-2xl" />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="absolute -bottom-4 -left-4 w-24 h-24 border-l-2 border-b-2 border-primary/40 rounded-bl-2xl"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="absolute -top-4 -right-4 w-24 h-24 border-r-2 border-t-2 border-primary/40 rounded-tr-2xl"
+          />
         </motion.div>
       </div>
     </div>
