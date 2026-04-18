@@ -8,6 +8,7 @@ import Diensten from "./pages/Diensten";
 import DienstDetail from "./pages/DienstDetail";
 import OverOns from "./pages/OverOns";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/diensten" element={<Diensten />} />
             <Route path="/diensten/:slug" element={<DienstDetail />} />
             <Route path="/over-ons" element={<OverOns />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
           </Route>
           <Route path="*" element={<NotFound />} />

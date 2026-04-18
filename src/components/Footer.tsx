@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo-dbs.png";
 
 const Footer = () => (
   <footer className="bg-card border-t border-border">
     <div className="container py-16">
       <div className="grid md:grid-cols-3 gap-12">
         <div>
-          <h3 className="text-lg font-bold text-foreground mb-4">
-            <span className="text-primary">DBS</span> Security
-          </h3>
+          <div className="flex items-center gap-3 mb-4">
+            <img src={logo} alt="DBS logo" className="w-12 h-12 object-contain" />
+            <span className="text-xl font-extrabold tracking-tight"><span className="text-gradient-red">DBS</span></span>
+          </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Dienst Bewaking en Surveillance B.V.
             <br />
@@ -22,6 +24,7 @@ const Footer = () => (
               { label: "Home", path: "/" },
               { label: "Diensten", path: "/diensten" },
               { label: "Over Ons", path: "/over-ons" },
+              { label: "FAQ", path: "/faq" },
               { label: "Contact", path: "/contact" },
             ].map((link) => (
               <Link
@@ -41,8 +44,8 @@ const Footer = () => (
             <p>Dienst Bewaking en Surveillance B.V.</p>
             <p>KVK: 93896034</p>
             <p>Einsteinlaan 28, 2289CC Rijswijk</p>
-            <p>info@dienstbewakingensurveillance.nl</p>
-            <p>06 11 74 64 64</p>
+            <p><a href="mailto:info@dienstbewakingensurveillance.nl" className="hover:text-primary transition-colors">info@dienstbewakingensurveillance.nl</a></p>
+            <p><a href="tel:0611746464" className="hover:text-primary transition-colors">06 11 74 64 64</a></p>
           </div>
         </div>
       </div>
