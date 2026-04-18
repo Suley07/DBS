@@ -2,55 +2,26 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ShieldCheck, Award, Clock } from "lucide-react";
 import heroImage from "@/assets/hero-home.jpg";
+import PartnersMarquee from "@/components/PartnersMarquee";
+import AboutIntro from "@/components/AboutIntro";
+import ServicesGrid from "@/components/ServicesGrid";
+import WhyUsSection from "@/components/WhyUsSection";
+import ContactFormSection from "@/components/ContactFormSection";
 
 const values = [
-  {
-    icon: ShieldCheck,
-    title: "Betrouwbaar",
-    description: "Gecertificeerde beveiligers met uitgebreide screening en jarenlange ervaring in de sector.",
-  },
-  {
-    icon: Award,
-    title: "Gecertificeerd",
-    description: "Volledig vergund conform Nederlandse wetgeving. Alle medewerkers beschikken over de vereiste diploma's.",
-  },
-  {
-    icon: Clock,
-    title: "24/7 Beschikbaar",
-    description: "Dag en nacht inzetbaar door heel Nederland. Snelle responstijd en flexibele planning.",
-  },
+  { icon: ShieldCheck, title: "Betrouwbaar", description: "Gecertificeerde beveiligers met uitgebreide screening en ervaring." },
+  { icon: Award, title: "Gecertificeerd", description: "Volledig vergund conform Nederlandse wet- en regelgeving." },
+  { icon: Clock, title: "24/7 Beschikbaar", description: "Dag en nacht inzetbaar door heel Nederland, met snelle responstijd." },
 ];
-
-const partners = [
-  "Schiphol Group", "HEINEKEN", "RAI Amsterdam", "Gemeente Den Haag",
-  "ProRail", "NS", "AFAS", "Ziggo Dome", "Johan Cruijff ArenA", "Jaarbeurs",
-  "Shell", "KPN",
-];
-
-const MarqueeRow = ({ reverse = false }: { reverse?: boolean }) => (
-  <div className="flex overflow-hidden">
-    <div className={`flex gap-12 items-center ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
-      {[...partners, ...partners].map((name, i) => (
-        <div
-          key={`${name}-${i}`}
-          className="flex-shrink-0 px-8 py-4 border border-border/50 rounded-lg bg-card/50 backdrop-blur-sm"
-        >
-          <span className="text-sm font-semibold text-muted-foreground tracking-wider uppercase whitespace-nowrap">
-            {name}
-          </span>
-        </div>
-      ))}
-    </div>
-  </div>
-);
 
 const Home = () => (
   <main>
     {/* Hero */}
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Professionele beveiliging" className="w-full h-full object-cover" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-background/55" />
+        <img src={heroImage} alt="DBS beveiliger bij modern kantoorpand" className="w-full h-full object-cover" width={1920} height={1080} />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/55 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
       </div>
 
       <div className="container relative z-10 pt-20">
@@ -60,54 +31,62 @@ const Home = () => (
           transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-3xl"
         >
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-sm font-medium text-primary uppercase tracking-[0.25em] mb-5"
+          >
+            Dienst Bewaking en Surveillance
+          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.25 }}
             className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-foreground mb-6 drop-shadow-lg"
           >
-            Premium Beveiliging
+            Wij waken,
             <br />
-            <span className="text-gradient-red">Voor Uw Objecten</span>
+            zodat <span className="text-gradient-red">u rustig</span>
             <br />
-            En Evenementen
+            kunt ondernemen.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.55 }}
             className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed drop-shadow-md"
           >
-            Landelijk inzetbare beveiligingsspecialisten. Van objectbeveiliging tot
-            evenementenbeveiliging — wij leveren discretie, betrouwbaarheid en professionaliteit.
+            Persoonlijke beveiliging op maat — voor uw pand, uw evenement of uw bouwplaats.
+            Een team dat meedenkt, snel handelt en u 24/7 dekking biedt door heel Nederland.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            transition={{ duration: 0.8, delay: 0.75 }}
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link
               to="/diensten"
               className="inline-flex items-center justify-center border border-primary text-primary px-8 py-4 rounded-lg text-sm font-semibold tracking-wide uppercase hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
-              Ontdek Onze Diensten
+              Ontdek onze diensten
             </Link>
             <Link
               to="/contact"
               className="inline-flex items-center justify-center btn-gradient-red text-primary-foreground px-8 py-4 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-300 glow-red"
             >
-              Offerte Aanvragen
+              Offerte aanvragen
             </Link>
           </motion.div>
         </motion.div>
       </div>
     </section>
 
-    {/* Value Proposition */}
-    <section className="py-24 md:py-32 bg-gradient-dark">
+    {/* Values */}
+    <section className="py-24 md:py-28 bg-gradient-dark">
       <div className="container">
         <div className="grid md:grid-cols-3 gap-8">
           {values.map((item, i) => (
@@ -117,7 +96,7 @@ const Home = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="text-center p-8"
+              className="text-center p-6"
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                 <item.icon className="w-7 h-7 text-primary" />
@@ -130,23 +109,11 @@ const Home = () => (
       </div>
     </section>
 
-    {/* Partners Marquee */}
-    <section className="py-16 md:py-20 border-y border-border/30 bg-background overflow-hidden">
-      <div className="container mb-8">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-sm font-medium text-muted-foreground uppercase tracking-widest text-center"
-        >
-          Vertrouwd door toonaangevende organisaties
-        </motion.p>
-      </div>
-      <div className="space-y-6">
-        <MarqueeRow />
-        <MarqueeRow reverse />
-      </div>
-    </section>
+    <AboutIntro />
+    <ServicesGrid />
+    <WhyUsSection />
+    <PartnersMarquee />
+    <ContactFormSection />
   </main>
 );
 
