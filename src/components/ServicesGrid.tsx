@@ -31,7 +31,7 @@ const ServicesGrid = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="group relative overflow-hidden rounded-xl aspect-[3/5] bg-card border border-border"
+            className="group relative overflow-hidden rounded-xl aspect-[3/5] bg-card border border-border transition-shadow duration-500 hover:shadow-[0_8px_30px_-8px_hsl(0,56%,35%,0.25)]"
           >
             <img
               src={service.image}
