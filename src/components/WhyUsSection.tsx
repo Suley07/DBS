@@ -39,9 +39,9 @@ const WhyUsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="group flex items-center gap-4 p-5 rounded-xl bg-card/60 border border-border hover:border-primary/40 transition-colors"
+            className="group flex items-center gap-4 p-5 rounded-xl bg-card/60 border border-border hover:border-primary/40 transition-all duration-300"
           >
-            <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+            <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-primary/20 group-hover:shadow-[0_0_16px_-2px_hsl(0,56%,35%,0.4)]">
               <r.icon className="w-5 h-5 text-primary" />
             </div>
             <p className="text-sm font-medium text-foreground">{r.title}</p>
