@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ShieldCheck, Award, Clock } from "lucide-react";
+import { ShieldCheck, Award, Clock, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-home.jpg";
-import PartnersMarquee from "@/components/PartnersMarquee";
 import AboutIntro from "@/components/AboutIntro";
 import ServicesGrid from "@/components/ServicesGrid";
 import WhyUsSection from "@/components/WhyUsSection";
@@ -12,6 +11,12 @@ const values = [
   { icon: ShieldCheck, title: "Betrouwbaar", description: "Gecertificeerde beveiligers met uitgebreide screening en ervaring." },
   { icon: Award, title: "Gecertificeerd", description: "Volledig vergund conform Nederlandse wet- en regelgeving." },
   { icon: Clock, title: "24/7 Beschikbaar", description: "Dag en nacht inzetbaar door heel Nederland, met snelle responstijd." },
+];
+
+const stats = [
+  { value: "500+", label: "Beveiligde objecten" },
+  { value: "15+", label: "Jaar ervaring" },
+  { value: "24/7", label: "Inzetbaar door heel Nederland" },
 ];
 
 const Home = () => (
@@ -34,7 +39,7 @@ const Home = () => (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             className="text-sm font-medium text-primary uppercase tracking-[0.25em] mb-5"
           >
             Dienst Bewaking en Surveillance
@@ -42,7 +47,7 @@ const Home = () => (
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.25 }}
+            transition={{ duration: 1.4, delay: 0.5, ease: "easeOut" }}
             className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-foreground mb-6 drop-shadow-lg"
           >
             Wij waken,
@@ -55,7 +60,7 @@ const Home = () => (
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.55 }}
+            transition={{ duration: 1.0, delay: 1.0 }}
             className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed drop-shadow-md"
           >
             Persoonlijke beveiliging op maat — voor uw pand, uw evenement of uw bouwplaats.
@@ -65,7 +70,7 @@ const Home = () => (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.75 }}
+            transition={{ duration: 0.9, delay: 1.4 }}
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link
@@ -83,6 +88,14 @@ const Home = () => (
           </motion.div>
         </motion.div>
       </div>
+
+      <motion.div
+        animate={{ y: [0, 8] }}
+        transition={{ duration: 1.2, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      >
+        <ChevronDown className="w-6 h-6 text-muted-foreground" />
+      </motion.div>
     </section>
 
     {/* Values */}
@@ -94,11 +107,12 @@ const Home = () => (
               key={item.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -4 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="text-center p-6"
+              className="group text-center p-6"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:shadow-[0_0_20px_-4px_hsl(0,56%,35%,0.5)]">
                 <item.icon className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
@@ -112,7 +126,31 @@ const Home = () => (
     <AboutIntro />
     <ServicesGrid />
     <WhyUsSection />
-    <PartnersMarquee />
+
+    {/* Stats */}
+    <section className="py-20 bg-gradient-dark border-y border-border/30">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+          {stats.map((s, i) => (
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+            >
+              <div className="text-5xl md:text-6xl font-extrabold text-gradient-red mb-3">
+                {s.value}
+              </div>
+              <p className="text-sm md:text-base text-muted-foreground tracking-wide">
+                {s.label}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <ContactFormSection />
   </main>
 );
