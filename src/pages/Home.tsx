@@ -5,6 +5,7 @@ import heroImage from "@/assets/hero-home.jpg";
 import AboutIntro from "@/components/AboutIntro";
 import ServicesGrid from "@/components/ServicesGrid";
 import WhyUsSection from "@/components/WhyUsSection";
+import PartnersMarquee from "@/components/PartnersMarquee";
 import ContactFormSection from "@/components/ContactFormSection";
 
 const values = [
@@ -14,8 +15,8 @@ const values = [
 ];
 
 const stats = [
-  { value: "500+", label: "Beveiligde objecten" },
-  { value: "15+", label: "Jaar ervaring" },
+  { value: "100+", label: "Beveiligde objecten" },
+  { value: "98%", label: "Tevreden opdrachtgevers" },
   { value: "24/7", label: "Inzetbaar door heel Nederland" },
 ];
 
@@ -24,7 +25,7 @@ const Home = () => (
     {/* Hero */}
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroImage} alt="DBS beveiliger bij modern kantoorpand"className="w-full h-full object-cover object-[70%_center]" width={1920} height={1080} />
+        <img src={heroImage} alt="DBS beveiliger bij modern kantoorpand" className="w-full h-full object-cover object-[80%_center]" width={1920} height={1080} />
         <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/55 to-background/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
       </div>
@@ -48,7 +49,7 @@ const Home = () => (
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4, delay: 0.5, ease: "easeOut" }}
-            className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-foreground mb-6 drop-shadow-lg"
+            className="text-3xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-foreground mb-6 drop-shadow-lg"
           >
             Wij waken,
             <br />
@@ -61,7 +62,7 @@ const Home = () => (
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 1.0 }}
-            className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed drop-shadow-md"
+            className="text-lg text-foreground/75 max-w-xl mb-10 leading-relaxed drop-shadow-md"
           >
             Persoonlijke beveiliging op maat — voor uw pand, uw evenement of uw bouwplaats.
             Een team dat meedenkt, snel handelt en u 24/7 dekking biedt door heel Nederland.
@@ -116,7 +117,7 @@ const Home = () => (
                 <item.icon className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              <p className="text-sm text-foreground/75 leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>
@@ -126,11 +127,12 @@ const Home = () => (
     <AboutIntro />
     <ServicesGrid />
     <WhyUsSection />
+    <PartnersMarquee />
 
     {/* Stats */}
     <section className="py-20 bg-gradient-dark border-y border-border/30">
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+      <div className="container px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -142,7 +144,7 @@ const Home = () => (
               <div className="text-5xl md:text-6xl font-extrabold text-gradient-red mb-3">
                 {s.value}
               </div>
-              <p className="text-sm md:text-base text-muted-foreground tracking-wide">
+              <p className="text-sm md:text-base text-foreground/75 tracking-wide">
                 {s.label}
               </p>
             </motion.div>

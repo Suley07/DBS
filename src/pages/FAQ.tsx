@@ -45,7 +45,7 @@ const FAQ = () => (
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground mb-6">
             Veelgestelde <span className="text-gradient-red">vragen</span>
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-foreground/75 leading-relaxed">
             Heeft u een vraag over onze beveiligingsdiensten of werkwijze?
             Hieronder vindt u de antwoorden op de meest voorkomende vragen.
           </p>
@@ -73,7 +73,7 @@ const FAQ = () => (
                   <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:no-underline">
                     {f.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
+                  <AccordionContent className="text-sm text-foreground/75 leading-relaxed pb-5">
                     {f.a}
                   </AccordionContent>
                 </AccordionItem>
@@ -91,7 +91,7 @@ const FAQ = () => (
             <h3 className="text-xl font-extrabold text-foreground mb-3">
               Vragen over onze diensten?
             </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+            <p className="text-sm text-foreground/75 leading-relaxed mb-6">
               Ons team helpt u graag met persoonlijk advies of een offerte op maat.
             </p>
             <Link

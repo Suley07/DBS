@@ -1,19 +1,16 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  { name: "Schiphol Group" },
-  { name: "Heineken" },
-  { name: "ProRail" },
-  { name: "Gemeente Den Haag" },
-  { name: "Jaarbeurs" },
+  "Bouwbedrijf Visser",
+  "Logistics Nederland",
+  "EventPro NL",
+  "Vastgoed Groep Zuid",
+  "TechCampus Rijswijk",
 ];
 
-const PartnerLogo = ({ name }: { name: string }) => (
-  <div className="flex-shrink-0 mx-10 md:mx-16 flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity">
-    <div className="w-7 h-7 rounded-md bg-foreground/90 flex items-center justify-center">
-      <span className="text-background text-xs font-extrabold">{name.charAt(0)}</span>
-    </div>
-    <span className="text-xl md:text-2xl font-extrabold tracking-tight text-foreground/80 whitespace-nowrap">
+const PartnerLabel = ({ name }: { name: string }) => (
+  <div className="flex-shrink-0 mx-6 md:mx-10 px-6 py-3 border border-border/60 rounded-lg bg-card/30 hover:border-primary/40 transition-colors">
+    <span className="text-sm md:text-base font-extrabold uppercase tracking-[0.2em] text-foreground/80 whitespace-nowrap">
       {name}
     </span>
   </div>
@@ -26,7 +23,7 @@ const PartnersMarquee = () => (
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="text-center text-sm md:text-base font-medium text-muted-foreground tracking-wide mb-14"
+      className="text-center text-sm md:text-base font-medium text-foreground/75 tracking-wide mb-14"
     >
       Vertrouwd door toonaangevende organisaties
     </motion.p>
@@ -38,9 +35,9 @@ const PartnersMarquee = () => (
       transition={{ duration: 1.2 }}
       className="marquee-mask"
     >
-      <div className="flex animate-marquee w-max">
-        {[...partners, ...partners].map((p, i) => (
-          <PartnerLogo key={`${p.name}-${i}`} name={p.name} />
+      <div className="flex animate-marquee w-max items-center">
+        {[...partners, ...partners].map((name, i) => (
+          <PartnerLabel key={`${name}-${i}`} name={name} />
         ))}
       </div>
     </motion.div>

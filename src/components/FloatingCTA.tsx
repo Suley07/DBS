@@ -28,7 +28,7 @@ const FloatingCTA = () => {
         >
           <Link
             to="/contact"
-            className="btn-gradient-red text-primary-foreground rounded-full pl-5 pr-6 py-3.5 shadow-2xl shadow-primary/30 flex items-center gap-2.5 text-sm font-semibold tracking-wide animate-pulse-soft hover:scale-[1.03] transition-transform"
+            className="btn-gradient-red text-primary-foreground rounded-full pl-4 pr-5 py-2.5 sm:pl-5 sm:pr-6 sm:py-3.5 shadow-2xl shadow-primary/30 flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-semibold tracking-wide animate-pulse-soft hover:scale-[1.03] transition-transform"
           >
             <MessageSquare className="w-4 h-4" />
             Neem contact op

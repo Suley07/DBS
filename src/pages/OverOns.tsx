@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Eye, Target, Heart, ShieldCheck } from "lucide-react";
-import aboutImage from "@/assets/about-team.jpg";
+import aboutImage from "@/assets/about-team.png";
 
 const pillars = [
   { icon: Eye, title: "Visie", text: "Wij geloven dat veiligheid persoonlijk is. Geen twee opdrachten zijn hetzelfde — daarom luisteren wij eerst en bouwen daarna." },
@@ -26,7 +26,7 @@ const OverOns = () => (
               <br />
               <span className="text-gradient-red">vakmanschap & vertrouwen</span>
             </h1>
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
+            <div className="space-y-5 text-foreground/75 leading-relaxed">
               <p>
                 Dienst Bewaking en Surveillance B.V. is een jonge, ambitieuze beveiligingsorganisatie
                 gevestigd in Rijswijk. Opgericht door professionals met een achtergrond in de
@@ -73,7 +73,7 @@ const OverOns = () => (
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-4">
             Waar wij voor staan
           </h2>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-foreground/75 leading-relaxed">
             Onze visie, missie en waarden zijn het fundament van elke opdracht die wij uitvoeren.
           </p>
         </motion.div>
@@ -92,7 +92,7 @@ const OverOns = () => (
                 <p.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="text-lg font-bold text-foreground mb-2">{p.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.text}</p>
+              <p className="text-sm text-foreground/75 leading-relaxed">{p.text}</p>
             </motion.div>
           ))}
         </div>

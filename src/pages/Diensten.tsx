@@ -16,7 +16,7 @@ const Diensten = () => (
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground mb-6">
             Onze <span className="text-gradient-red">Diensten</span>
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-foreground/75 leading-relaxed">
             Van vaste objectposten tot mobiele surveillance en evenementen —
             wij bieden maatwerkoplossingen voor elke beveiligingsbehoefte.
           </p>
@@ -49,12 +49,12 @@ const Diensten = () => (
                 <h3 className="text-xl font-bold text-foreground uppercase tracking-tight mb-2">
                   {service.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <p className="text-sm text-foreground/75 leading-relaxed mb-4">
                   {service.short}
                 </p>
                 <Link
                   to={`/diensten/${service.slug}`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground group-hover:text-primary transition-colors uppercase tracking-wide"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-foreground/75 group-hover:text-primary transition-colors uppercase tracking-wide"
                 >
                   Meer informatie
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

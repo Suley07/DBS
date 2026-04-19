@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo-dbs.png";
 
@@ -84,6 +84,9 @@ const Navbar = () => {
             <ContactPill href="mailto:info@dienstbewakingensurveillance.nl" label="Email ons">
               <Mail className="w-4 h-4 text-foreground group-hover:text-primary-foreground transition-colors" />
             </ContactPill>
+            <ContactPill href="https://www.instagram.com/dbsbeveiliging" label="Instagram" external>
+              <Instagram className="w-4 h-4 text-foreground group-hover:text-primary-foreground transition-colors" />
+            </ContactPill>
           </div>
         </div>
 
@@ -124,7 +127,7 @@ const Navbar = () => {
                           key={s.path}
                           to={s.path}
                           onClick={() => setDropdownOpen(false)}
-                          className="block px-5 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-colors"
+                          className="block px-5 py-3 text-sm text-foreground/75 hover:text-foreground hover:bg-primary/10 transition-colors"
                         >
                           {s.label}
                         </Link>
@@ -147,6 +150,12 @@ const Navbar = () => {
               </Link>
             )
           )}
+          <Link
+            to="/offerte"
+            className="hidden lg:inline-flex border border-primary text-primary px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide hover:bg-primary hover:text-primary-foreground transition-all"
+          >
+            Offerte
+          </Link>
           <Link
             to="/contact"
             className="btn-gradient-red text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold tracking-wide transition-all hover:shadow-lg hover:shadow-primary/20"
@@ -180,6 +189,9 @@ const Navbar = () => {
                 <ContactPill href="mailto:info@dienstbewakingensurveillance.nl" label="Email">
                   <Mail className="w-5 h-5 text-foreground" />
                 </ContactPill>
+                <ContactPill href="https://www.instagram.com/dbsbeveiliging" label="Instagram" external>
+                  <Instagram className="w-5 h-5 text-foreground" />
+                </ContactPill>
               </div>
 
               <Link to="/" onClick={() => setOpen(false)} className={`text-sm font-medium py-2 transition-colors ${location.pathname === "/" ? "text-primary" : "text-muted-foreground"}`}>
@@ -209,7 +221,8 @@ const Navbar = () => {
               <Link to="/over-ons" onClick={() => setOpen(false)} className={`text-sm font-medium py-2 transition-colors ${location.pathname === "/over-ons" ? "text-primary" : "text-muted-foreground"}`}>Over Ons</Link>
               <Link to="/faq" onClick={() => setOpen(false)} className={`text-sm font-medium py-2 transition-colors ${location.pathname === "/faq" ? "text-primary" : "text-muted-foreground"}`}>FAQ</Link>
               <Link to="/contact" onClick={() => setOpen(false)} className={`text-sm font-medium py-2 transition-colors ${location.pathname === "/contact" ? "text-primary" : "text-muted-foreground"}`}>Contact</Link>
-              <Link to="/contact" onClick={() => setOpen(false)} className="btn-gradient-red text-primary-foreground px-6 py-3 rounded-lg text-sm font-semibold text-center mt-2">Offerte Aanvragen</Link>
+              <Link to="/offerte" onClick={() => setOpen(false)} className="border border-primary text-primary px-6 py-3 rounded-lg text-sm font-semibold text-center mt-2">Offerte</Link>
+              <Link to="/contact" onClick={() => setOpen(false)} className="btn-gradient-red text-primary-foreground px-6 py-3 rounded-lg text-sm font-semibold text-center">Offerte Aanvragen</Link>
             </div>
           </motion.div>
         )}

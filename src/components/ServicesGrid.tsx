@@ -17,13 +17,13 @@ const ServicesGrid = () => (
         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground">
           Onze diensten
         </h2>
-        <p className="text-muted-foreground mt-4 leading-relaxed">
+        <p className="text-foreground/75 mt-4 leading-relaxed">
           Van vaste objectposten tot mobiele rondes en evenementenbeveiliging —
           beweeg over een dienst voor een korte preview.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
         {services.map((service, i) => (
           <motion.div
             key={service.slug}
@@ -49,14 +49,14 @@ const ServicesGrid = () => (
 
               {/* Hover preview */}
               <div className="overflow-hidden max-h-0 group-hover:max-h-32 transition-all duration-500 ease-out">
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-3 mt-1">
+                <p className="text-xs md:text-sm text-foreground/75 leading-relaxed mb-3 mt-1">
                   {service.preview}
                 </p>
               </div>
 
               <Link
                 to={`/diensten/${service.slug}`}
-                className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-muted-foreground group-hover:text-primary transition-colors uppercase tracking-wide"
+                className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-foreground/75 group-hover:text-primary transition-colors uppercase tracking-wide"
               >
                 Meer info
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />

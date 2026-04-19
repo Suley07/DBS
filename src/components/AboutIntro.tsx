@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import aboutImage from "@/assets/about-team.jpg";
+import aboutImage from "@/assets/about-team.png";
 
 const AboutIntro = () => (
   <section className="py-24 md:py-32 bg-gradient-dark">
@@ -18,7 +18,7 @@ const AboutIntro = () => (
             Een team dat <span className="text-gradient-red">meedenkt</span>,
             geen leverancier die afwacht.
           </h2>
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <div className="space-y-4 text-foreground/75 leading-relaxed">
             <p>
               Dienst Bewaking en Surveillance bestaat uit een hecht team van gecertificeerde
               beveiligers met jarenlange ervaring in uiteenlopende sectoren. Wij combineren die
