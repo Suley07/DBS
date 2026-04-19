@@ -43,7 +43,7 @@ const ServicesGrid = () => (
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20" />
             <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
-              <h3 className="text-base md:text-xl font-extrabold uppercase tracking-tight text-foreground mb-2 leading-tight">
+              <h3 className="text-xs md:text-sm lg:text-base font-extrabold uppercase tracking-tight text-foreground mb-2 leading-tight break-words hyphens-auto">
                 {service.title}
               </h3>
 
