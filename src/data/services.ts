@@ -1,8 +1,8 @@
 import serviceObject from "@/assets/service-object.jpg";
-import serviceEvent from "@/assets/service-event.jpg";
-import serviceConstruction from "@/assets/service-construction.jpg";
-import serviceMobile from "@/assets/service-mobile.jpg";
-import serviceAccess from "@/assets/service-access.jpg";
+import serviceEvent from "@/assets/service-event.png";
+import serviceBouw from "@/assets/service-bouw.png";
+import serviceMobile from "@/assets/service-construction.jpg";
+import serviceHospitality from "@/assets/service-hospitality.jpg";
 
 export type Service = {
   slug: string;
@@ -59,7 +59,7 @@ export const services: Service[] = [
     title: "Bouwbeveiliging",
     short: "Bescherming van bouwplaatsen, materialen en machines.",
     preview: "Diefstalpreventie en flexibele inzet per projectfase.",
-    image: serviceConstruction,
+    image: serviceBouw,
     intro:
       "Bouwplaatsen zijn kwetsbaar voor diefstal, vandalisme en ongeautoriseerde toegang. DBS biedt specialistische bouwbeveiliging die uw materialen, machines en project beschermt — dag en nacht.",
     description:
@@ -97,7 +97,7 @@ export const services: Service[] = [
     title: "Toegangsbeheer & Receptiediensten",
     short: "Gastvrije ontvangst gecombineerd met scherpe toegangscontrole.",
     preview: "Het visitekaartje van uw organisatie — veilig én warm.",
-    image: serviceAccess,
+    image: serviceHospitality,
     intro:
       "DBS combineert professionele beveiliging met hoogwaardige gastvrijheid. Onze receptie- en toegangsbeheermedewerkers zijn het visitekaartje van uw organisatie: zij ontvangen bezoekers hartelijk en bewaken tegelijkertijd de toegang.",
     description:

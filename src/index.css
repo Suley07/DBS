@@ -111,4 +111,13 @@
     50% { box-shadow: 0 0 0 10px hsl(0, 56%, 35% / 0); }
   }
   .animate-pulse-soft { animation: pulse-soft 2.4s ease-out infinite; }
+
+  /* Google Maps embed — donkere uitstraling */
+  .map-embed {
+    width: 100%;
+    height: 300px;
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+    filter: grayscale(100%) invert(0.9) hue-rotate(180deg);
+  }
 }
