@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Clock, UserCheck, Zap, FileText, MapPin, Heart } from "lucide-react";
+import bgImage from "@/assets/service-object.jpg";
 
 const reasons = [
   { icon: Clock, title: "24/7 inzetbaar, altijd bereikbaar" },
@@ -11,13 +12,20 @@ const reasons = [
 ];
 
 const WhyUsSection = () => (
-  <section className="py-24 md:py-32 bg-background">
-    <div className="container px-4">
+  <section className="relative py-24 md:py-32 overflow-hidden">
+    <div
+      className="absolute inset-0 bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: `url(${bgImage})` }}
+      aria-hidden="true"
+    />
+    <div className="absolute inset-0 bg-background/85" aria-hidden="true" />
+
+    <div className="container px-4 relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="max-w-3xl mx-auto text-center mb-14"
       >
         <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">Waarom DBS</p>
@@ -39,7 +47,7 @@ const WhyUsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="group flex items-center gap-4 p-5 rounded-xl bg-card/60 border border-border hover:border-primary/40 transition-all duration-300"
+            className="group flex items-center gap-4 p-5 rounded-xl bg-background/60 backdrop-blur-sm border border-primary/20 hover:border-primary/60 hover:shadow-[0_0_20px_-4px_hsl(0,56%,35%,0.3)] transition-all duration-300"
           >
             <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-primary/20 group-hover:shadow-[0_0_16px_-2px_hsl(0,56%,35%,0.4)]">
               <r.icon className="w-5 h-5 text-primary" />

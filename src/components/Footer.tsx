@@ -61,9 +61,13 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-border mt-12 pt-8 text-center">
+      <div className="border-t border-border mt-12 pt-8 text-center space-y-2">
         <p className="text-xs text-foreground/75">
           © {new Date().getFullYear()} Dienst Bewaking en Surveillance B.V. Alle rechten voorbehouden.
+        </p>
+        <p className="text-xs text-foreground/60">
+          Vergund beveiligingsbedrijf | KVK: 93896034 |{" "}
+          <Link to="/privacy" className="hover:text-primary transition-colors">Privacybeleid</Link>
         </p>
       </div>
     </div>

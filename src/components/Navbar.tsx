@@ -152,12 +152,6 @@ const Navbar = () => {
           )}
           <Link
             to="/offerte"
-            className="hidden lg:inline-flex border border-primary text-primary px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide hover:bg-primary hover:text-primary-foreground transition-all"
-          >
-            Offerte
-          </Link>
-          <Link
-            to="/contact"
             className="btn-gradient-red text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold tracking-wide transition-all hover:shadow-lg hover:shadow-primary/20"
           >
             Offerte Aanvragen
@@ -221,8 +215,7 @@ const Navbar = () => {
               <Link to="/over-ons" onClick={() => setOpen(false)} className={`text-sm font-medium py-2 transition-colors ${location.pathname === "/over-ons" ? "text-primary" : "text-muted-foreground"}`}>Over Ons</Link>
               <Link to="/faq" onClick={() => setOpen(false)} className={`text-sm font-medium py-2 transition-colors ${location.pathname === "/faq" ? "text-primary" : "text-muted-foreground"}`}>FAQ</Link>
               <Link to="/contact" onClick={() => setOpen(false)} className={`text-sm font-medium py-2 transition-colors ${location.pathname === "/contact" ? "text-primary" : "text-muted-foreground"}`}>Contact</Link>
-              <Link to="/offerte" onClick={() => setOpen(false)} className="border border-primary text-primary px-6 py-3 rounded-lg text-sm font-semibold text-center mt-2">Offerte</Link>
-              <Link to="/contact" onClick={() => setOpen(false)} className="btn-gradient-red text-primary-foreground px-6 py-3 rounded-lg text-sm font-semibold text-center">Offerte Aanvragen</Link>
+              <Link to="/offerte" onClick={() => setOpen(false)} className="btn-gradient-red text-primary-foreground px-6 py-3 rounded-lg text-sm font-semibold text-center mt-2">Offerte Aanvragen</Link>
             </div>
           </motion.div>
         )}
