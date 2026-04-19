@@ -12,7 +12,7 @@ const reasons = [
 
 const WhyUsSection = () => (
   <section className="py-24 md:py-32 bg-background">
-    <div className="container">
+    <div className="container px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,14 +24,14 @@ const WhyUsSection = () => (
         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground mb-5">
           Betrouwbaarheid die <span className="text-gradient-red">verder gaat</span> dan beveiliging
         </h2>
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="text-foreground/75 leading-relaxed">
           Bij Dienst Bewaking en Surveillance geloven we dat échte veiligheid begint met vertrouwen.
           Onze beveiligers combineren ervaring, alertheid en moderne technologie om u rust en
           zekerheid te bieden — dag en nacht.
         </p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {reasons.map((r, i) => (
           <motion.div
             key={r.title}

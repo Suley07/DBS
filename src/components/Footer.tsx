@@ -1,20 +1,30 @@
 import { Link } from "react-router-dom";
+import { Instagram } from "lucide-react";
 import logo from "@/assets/logo-dbs.png";
 
 const Footer = () => (
   <footer className="bg-card border-t border-border">
-    <div className="container py-16">
+    <div className="container px-4 py-16">
       <div className="grid md:grid-cols-3 gap-12">
         <div>
           <div className="flex items-center gap-3 mb-4">
             <img src={logo} alt="DBS logo" className="w-12 h-12 object-contain" />
             <span className="text-xl font-extrabold tracking-tight"><span className="text-gradient-red">DBS</span></span>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-sm text-foreground/75 leading-relaxed mb-5">
             Dienst Bewaking en Surveillance B.V.
             <br />
             Professionele beveiligingsdiensten door heel Nederland.
           </p>
+          <a
+            href="https://www.instagram.com/dbsbeveiliging"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="DBS op Instagram"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 border border-primary/30 text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+          >
+            <Instagram className="w-4 h-4" />
+          </a>
         </div>
 
         <div>
@@ -25,12 +35,13 @@ const Footer = () => (
               { label: "Diensten", path: "/diensten" },
               { label: "Over Ons", path: "/over-ons" },
               { label: "FAQ", path: "/faq" },
+              { label: "Offerte", path: "/offerte" },
               { label: "Contact", path: "/contact" },
             ].map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm text-foreground/75 hover:text-primary transition-colors"
               >
                 {link.label}
               </Link>
@@ -40,7 +51,7 @@ const Footer = () => (
 
         <div>
           <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">Bedrijfsgegevens</h4>
-          <div className="text-sm text-muted-foreground space-y-2">
+          <div className="text-sm text-foreground/75 space-y-2">
             <p>Dienst Bewaking en Surveillance B.V.</p>
             <p>KVK: 93896034</p>
             <p>Einsteinlaan 28, 2289CC Rijswijk</p>
@@ -51,7 +62,7 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-border mt-12 pt-8 text-center">
-        <p className="text-xs text-muted-foreground">
+        <p className="text-xs text-foreground/75">
           © {new Date().getFullYear()} Dienst Bewaking en Surveillance B.V. Alle rechten voorbehouden.
         </p>
       </div>
