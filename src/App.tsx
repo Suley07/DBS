@@ -10,6 +10,7 @@ import OverOns from "./pages/OverOns";
 import Contact from "./pages/Contact";
 import Offerte from "./pages/Offerte";
 import FAQ from "./pages/FAQ";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/faq" element={<FAQ />} />
             <Route path="/offerte" element={<Offerte />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

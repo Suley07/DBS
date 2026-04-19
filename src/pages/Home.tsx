@@ -100,9 +100,9 @@ const Home = () => (
     </section>
 
     {/* Values */}
-    <section className="py-24 md:py-28 bg-gradient-dark">
-      <div className="container">
-        <div className="grid md:grid-cols-3 gap-8">
+    <section className="py-20 bg-gradient-dark">
+      <div className="container px-4">
+        <div className="grid md:grid-cols-3 gap-px bg-border/40 rounded-2xl overflow-hidden">
           {values.map((item, i) => (
             <motion.div
               key={item.title}
@@ -111,13 +111,16 @@ const Home = () => (
               whileHover={{ y: -4 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="group text-center p-6"
+              className="relative bg-background border-l-2 border-primary/60 p-10 overflow-hidden group"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:shadow-[0_0_20px_-4px_hsl(0,56%,35%,0.5)]">
-                <item.icon className="w-7 h-7 text-primary" />
+              <span className="absolute top-4 right-6 text-6xl font-extrabold text-primary/20 select-none pointer-events-none">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div className="relative z-10">
+                <item.icon className="w-8 h-8 text-primary mb-5" />
+                <h3 className="text-xl font-extrabold text-foreground mb-3">{item.title}</h3>
+                <p className="text-sm text-foreground/75 leading-relaxed">{item.description}</p>
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-              <p className="text-sm text-foreground/75 leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>

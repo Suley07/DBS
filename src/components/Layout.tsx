@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import FloatingCTA from "./FloatingCTA";
+import CookieBanner from "./CookieBanner";
 
 const Layout = () => {
   const { pathname } = useLocation();
@@ -16,6 +17,7 @@ const Layout = () => {
       <Outlet />
       <Footer />
       <FloatingCTA />
+      <CookieBanner />
     </div>
   );
 };

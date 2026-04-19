@@ -63,13 +63,16 @@ const Contact = () => {
                 ))}
               </div>
 
-              <div className="mt-12">
+              <div className="mt-8">
                 <iframe
                   title="DBS locatie Einsteinlaan 28 Rijswijk"
-                  src="https://www.google.com/maps?q=Einsteinlaan+28,+2289CC+Rijswijk&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.1!2d4.3667!3d52.0333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDAyJzAwLjAiTiA0wrAyMicwMC4wIkU!5e0!3m2!1snl!2snl!4v1"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0, borderRadius: "8px", filter: "grayscale(100%) contrast(1.1)", opacity: 0.8 }}
+                  allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="map-embed"
                 />
               </div>
             </motion.div>
