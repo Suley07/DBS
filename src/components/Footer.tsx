@@ -54,6 +54,8 @@ const Footer = () => (
           <div className="text-sm text-foreground/75 space-y-2">
             <p>Dienst Bewaking en Surveillance B.V.</p>
             <p>KVK: 93896034</p>
+            <p>ND-nummer: ND9198</p>
+            <p>BTW-nummer: NL866564767B01</p>
             <p>Einsteinlaan 28, 2289CC Rijswijk</p>
             <p><a href="mailto:info@dienstbewakingensurveillance.nl" className="hover:text-primary transition-colors">info@dienstbewakingensurveillance.nl</a></p>
             <p><a href="tel:0611746464" className="hover:text-primary transition-colors">06 11 74 64 64</a></p>
